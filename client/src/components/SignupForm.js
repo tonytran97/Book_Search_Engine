@@ -41,17 +41,17 @@ const SignupForm = () => {
       })
       console.log(newUser);
 
-      const { data } = await login({
-        variables: { ...userFormData },
-      });
-      // console.log(data);
-      if (!data) {
-        throw new Error('something went wrong!');
-      }
+      // const { data } = await login({
+      //   variables: { ...userFormData },
+      // });
+      // // console.log(data);
+      // if (!data) {
+      //   throw new Error('something went wrong!');
+      // }
 
       // const { token, user } = await response.json();
       // console.log(user);
-      Auth.login(data.login.token);
+      Auth.login(data.createUser.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
